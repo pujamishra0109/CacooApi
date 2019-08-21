@@ -8,31 +8,31 @@ import java.util.Date;
  * Created by Puja on 19/08/19.
  */
 
-@Data
+
 public class DiagramValue {
 
-        String url;
-        String imageUrl;
-        String imageUrlForApi;
-        String diagramId;
-        String title;
-        String description;
-        String security;
-        String type;
-        Owner owner;
-        String ownerName;
-        String ownerNickname;
-        Boolean editing;
-        Boolean own;
-        Boolean shared;
-        Integer folderId;
-        String folderName;
-        Integer sheetCount;
-        Date created;
-        Date updated;
-        String projectId;
-        String projectName;
-        String organizationKey;
+        private String url;
+        private String imageUrl;
+        private String imageUrlForApi;
+        private String diagramId;
+        private  String title;
+        private String description;
+        private String security;
+        private String type;
+        private Owner owner;
+        private String ownerName;
+        private String ownerNickname;
+        private Boolean editing;
+        private Boolean own;
+        private Boolean shared;
+        private Integer folderId;
+        private String folderName;
+        private Integer sheetCount;
+        private Date created;
+        private Date updated;
+        private String projectId;
+        private String projectName;
+        private String organizationKey;
 
         public String getUrl() {
                 return url;

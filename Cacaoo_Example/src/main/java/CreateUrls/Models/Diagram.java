@@ -10,14 +10,31 @@ import org.slf4j.Logger;
 /**
  * Created by Puja on 19/08/19.
  */
-@Data
+
+
 public class Diagram {
 
 
 
-    ArrayList<DiagramValue> result;
+    public ArrayList<DiagramValue> getResult() {
+		return result;
+	}
 
-    Integer count;
+	public void setResult(ArrayList<DiagramValue> result) {
+		this.result = result;
+	}
+
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	private ArrayList<DiagramValue> result;
+
+    private Integer count;
 
     @Override
     public String toString() {
