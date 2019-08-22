@@ -17,11 +17,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Date;
+
+import java.util.Arrays;
+import java.util.*;
+
 
 import CreateUrls.Models.*;;
 
@@ -36,18 +41,13 @@ public class Helper {
 	 @Autowired
 	 private DiagramService helperService;
 
+
 	 private static final Logger logger = LoggerFactory.getLogger(Helper.class);
 	  
-	// DateFormat sdf1 = new SimpleDateFormat(
-	            //"EEE MMM  dd HH:mm:ss yyyy zzz", Locale.US);
-	 
 	            SimpleDateFormat sdf1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
 
 	 
 	 DateFormat sdf = new SimpleDateFormat("dd-MM-YYYY");
-//	dateFormat.parse("Tue Jul 13 00:00:00 CEST 2011");
-//	System.out.println(dateFormat.format(new Date()));
-//	 
 	 
 	public List<DiagramResult> getSearchResult(String str,String  startDate,String endDate) throws Exception {
 		
@@ -72,14 +72,9 @@ public class Helper {
 				if(diagramValueObj.getDescription()!=null)
 				diagramResult.setDescription(diagramValueObj.getDescription());
 				
-//				logger.info("searched Date  "+ startDate+"  "+ endDate);
-//				logger.info("createdDate "+diagramValueObj.getCreated() );
-//				if(diagramValueObj.getCreated()!=null)
-					diagramResult.setCreatedDate(sdf1.format(diagramValueObj.getCreated()));
+				diagramResult.setCreatedDate(sdf1.format(diagramValueObj.getCreated()));
 				
-				
-				//logger.info("createdDate of the result "+diagramResult.getCreatedDate() );
-				
+		
 				
 				resultList.add(diagramResult);
 			}
@@ -100,14 +95,9 @@ public class Helper {
 	            "-" +         cal.get(Calendar.YEAR);
 	    logger.info("formatedDate : " + formatedDate);
 
-	    //logger.info("Today's Date  "+ new SimpleDateFormat("dd-MM-YYYY").format(new Date()));
-		
-	    
 	    Date created=new SimpleDateFormat("dd-MM-yyyy").parse(formatedDate);
 		
-		
-	    
-		logger.info("createdDate   "+created+"   "+" startDateStr : "+ startDateStr+" endDateStr  "+endDateStr);
+	    logger.info("createdDate   "+created+"   "+" startDateStr : "+ startDateStr+" endDateStr  "+endDateStr);
 		if(Objects.isNull(startDateStr) && Objects.isNull(endDateStr)) 
 			return true;
 		Date startDate=null;
@@ -158,8 +148,6 @@ public class Helper {
     	
 		
 	}
-	
-	
 	
 	
 	public boolean checkEqual(String str,DiagramValue diagramValueObj) {

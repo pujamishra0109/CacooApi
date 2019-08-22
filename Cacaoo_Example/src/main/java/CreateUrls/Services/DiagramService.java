@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,8 +19,8 @@ public interface DiagramService {
 
     public ResponseEntity<Diagram> getDiagram() throws Exception;
     public Diagram getDiagramDetails() throws Exception ;
+
     public ResponseEntity<List<DiagramResult>> getSerachResult(String str,String startDate,String endDate) throws Exception ;
 
-
-
+   
 }

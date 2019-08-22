@@ -1,5 +1,6 @@
 package CreateUrls.Services;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -94,12 +95,14 @@ public class DiagramServiceImpl implements  DiagramService{
 
         return diagram;
     }
+
     public ResponseEntity<List<DiagramResult>> getSerachResult(String str,String startDate,String endDate) throws Exception {
 
     	List<DiagramResult> result=new ArrayList<DiagramResult>();
     	
     		result= helper.getSearchResultSorted(str,startDate,endDate);
-    	if(result==null)
+
+    		if(result==null)
     		return new ResponseEntity<List<DiagramResult> >(result,HttpStatus.NO_CONTENT);
         
     	return new ResponseEntity<List<DiagramResult> >(result,HttpStatus.OK);

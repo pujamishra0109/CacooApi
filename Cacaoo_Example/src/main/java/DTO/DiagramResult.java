@@ -1,12 +1,12 @@
 package DTO;
 
-import java.util.Date;
 
-import lombok.Data;
+import java.util.Date;
 
 
 public class DiagramResult {
 	
+
 	String Title;
 	String DiagramId;
 	String URL;
@@ -47,5 +47,5 @@ public class DiagramResult {
 	}
 	
 	
-	
+
 }

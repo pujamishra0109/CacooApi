@@ -1,13 +1,15 @@
 package CreateUrls.Controller;
 
-import java.util.Date;
+
+
+
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
+
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,20 +47,8 @@ public class TestController {
      
         return result;}
     
-    @RequestMapping(value = "/search", method = RequestMethod.GET, produces = {"application/json"})
-    public ResponseEntity<List<DiagramResult>> searchWord(@RequestParam String str) throws Exception{
-    	 ResponseEntity<List<DiagramResult>> result= helperService.getSerachResult(str,null,null);
 
-     
-        return result;}
-    
-    
-//    @RequestMapping(value = "/searchDate", method = RequestMethod.GET, produces = {"application/json"})
-//    public ResponseEntity<List<DiagramResult>> searchWordDate(@RequestParam String str,@RequestParam(required=false)@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Date startDate,@RequestParam(required=false)@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Date enDate) throws Exception{
-//    	 ResponseEntity<List<DiagramResult>> result= helperService.getSerachResult(str,startDate,enDate);
-//
-//     
-//        return result;}
+
 
     @RequestMapping(value = "/searchDate", method = RequestMethod.GET, produces = {"application/json"})
     public ResponseEntity<List<DiagramResult>> searchWordDate(@RequestParam String str,@RequestParam(required=false) String startDate,@RequestParam(required=false)String endDate) throws Exception{
